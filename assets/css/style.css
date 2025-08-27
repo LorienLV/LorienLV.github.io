@@ -522,6 +522,30 @@ section {
   fill: #47aeff;
 }
 
+.repositories .iconbox-violet i {
+  color: #C19DC7;
+}
+
+.repositories .iconbox-violet:hover .icon i {
+  color: #fff;
+}
+
+.repositories .iconbox-violet:hover .icon path {
+  fill: #C19DC7;
+}
+
+.repositories .iconbox-green i {
+  color: #A8DC98;
+}
+
+.repositories .iconbox-green:hover .icon i {
+  color: #fff;
+}
+
+.repositories .iconbox-green:hover .icon path {
+  fill: #A8DC98;
+}
+
 .repositories .iconbox-orange i {
   color: #ffa76e;
 }
