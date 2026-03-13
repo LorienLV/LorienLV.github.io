@@ -137,120 +137,6 @@
   }
 
   /**
-   * Hero type effect
-   */
-  const typed = select('.typed')
-  if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
-    new Typed('.typed', {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
-    });
-  }
-
-  /**
-   * Skills animation
-   */
-  let skilsContent = select('.skills-content');
-  if (skilsContent) {
-    new Waypoint({
-      element: skilsContent,
-      offset: '80%',
-      handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
-      }
-    })
-  }
-
-  /**
-   * Porfolio isotope and filter
-   */
-  window.addEventListener('load', () => {
-    let portfolioContainer = select('.portfolio-container');
-    if (portfolioContainer) {
-      let portfolioIsotope = new Isotope(portfolioContainer, {
-        itemSelector: '.portfolio-item'
-      });
-
-      let portfolioFilters = select('#portfolio-flters li', true);
-
-      on('click', '#portfolio-flters li', function(e) {
-        e.preventDefault();
-        portfolioFilters.forEach(function(el) {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        portfolioIsotope.arrange({
-          filter: this.getAttribute('data-filter')
-        });
-        portfolioIsotope.on('arrangeComplete', function() {
-          AOS.refresh()
-        });
-      }, true);
-    }
-
-  });
-
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Initiate portfolio details lightbox 
-   */
-  const portfolioDetailsLightbox = GLightbox({
-    selector: '.portfolio-details-lightbox',
-    width: '90%',
-    height: '90vh'
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
    * Animation on scroll
    */
   window.addEventListener('load', () => {
@@ -263,8 +149,87 @@
   });
 
   /**
-   * Initiate Pure Counter 
+   * Initiate Pure Counter
    */
   // new PureCounter();
+
+  const publications = window.publicationsData || [];
+
+  const renderPublicationLinks = (links) => links.map((link) =>
+    `[<a href="${link.href}" target="_blank">${link.label}</a>]`
+  ).join('\n                  ');
+
+  const renderPublications = () => {
+    const list = select('#publications-list');
+    if (!list) return;
+
+    publications.forEach((publication, index) => {
+      const delay = Math.min(100 + (index * 50), 500);
+      const jcrHtml = publication.jcr ? `
+              <div class="jcr-container">
+                <div class="jcr-quartile ${publication.jcr.quartileClass}"><span class="jcr-text">${publication.jcr.quartileText}</span></div>
+                <div class="jcr-metric"><span class="jcr-text">${publication.jcr.metricText}</span></div>
+              </div>` : '';
+
+      list.insertAdjacentHTML('beforeend', `
+          <div class="row paper">
+            <div class="d-none d-lg-block order-last order-lg-first col">
+              <img class="img-fluid" src="${publication.image}" alt="">
+            </div>
+            <div class="col-12 col-lg-7">
+              <h4>${publication.title}</h4>
+                <p>
+                  ${renderPublicationLinks(publication.links)}
+                </p>
+              <p>${publication.authorsHtml}</p>
+              <p class="fst-italic">
+                ${publication.venueHtml}
+              </p>${jcrHtml}
+            </div>
+          </div>`);
+    });
+  };
+
+  const repositories_big = window.repositoriesBigData || [];
+
+  const repositories_small = window.repositoriesSmallData || [];
+
+  const renderRepositoriesBig = () => {
+    const gridBig  = select('#repositories-grid');
+    if (!gridBig) return;
+
+    repositories_big.forEach((repo) => {
+      // Full card with icon
+      gridBig.insertAdjacentHTML('beforeend', `
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <a href="${repo.url}" target="_blank" class="icon-box">
+            <div class="icon">
+              <img class="image" style="width:${repo.iconWidth || '80px'};height:auto;" src="${repo.icon}" alt="">
+            </div>
+            <h4>${repo.title}</h4>
+            <p>${repo.description}</p>
+          </a>
+        </div>`);
+    });
+  };
+
+  const RenderRepositoriesSmall = () => {
+    const gridSmall = select('#repositories-grid-small');
+    if (!gridSmall) return;
+
+    repositories_small.forEach((repo) => {
+      gridSmall.insertAdjacentHTML('beforeend', `
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
+          <a href="${repo.url}" target="_blank" class="icon-box icon-box-small">
+            <h4>${repo.title}</h4>
+            <p>${repo.description}</p>
+          </a>
+        </div>`);
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', renderPublications);
+  document.addEventListener('DOMContentLoaded', renderRepositoriesBig);
+  document.addEventListener('DOMContentLoaded', RenderRepositoriesSmall);
 
 })()

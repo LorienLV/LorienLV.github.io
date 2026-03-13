@@ -436,26 +436,48 @@ section {
   padding-bottom: 0;
 }
 
-.publications .image {}
-
 .publications .paper h4 {
   font-weight: 550;
   font-size: 20px;
 }
 
-.publications .text {}
-
-.publications .paper .authors {}
-
 /*--------------------------------------------------------------
-# Services
+# Repositories
 --------------------------------------------------------------*/
+
 .repositories .icon-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   text-align: center;
   padding: 70px 20px 80px 20px;
-  transition: all ease-in-out 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   background: #fff;
   box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bottom accent line grows from center */
+.repositories .icon-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #0563bb;
+  transition: width 0.35s ease;
+}
+
+.repositories .icon-box:hover::after {
+  width: 55%;
+}
+
+.repositories .icon-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 12px 40px 0px rgba(0, 0, 0, 0.10);
 }
 
 .repositories .icon-box .icon {
@@ -465,16 +487,13 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: ease-in-out 0.3s;
+  transition: transform 0.35s ease;
   position: relative;
 }
 
 .repositories .icon-box .icon img {
-  font-size: 36px;
-  transition: 0.5s;
+  transition: 0.4s;
   position: relative;
-  /* width: 90px; */
-  /* height: 90px; */
 }
 
 .repositories .icon-box .icon svg {
@@ -505,105 +524,20 @@ section {
   margin-bottom: 0;
 }
 
-.repositories .icon-box:hover {
-  border-color: #fff;
-  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
+/* Compact card for repos without an icon */
+.repositories .icon-box-small {
+  padding: 28px 24px 32px 24px;
+  text-align: left;
 }
 
-.repositories .iconbox-blue i {
-  color: #47aeff;
+.repositories .icon-box-small h4 {
+  font-size: 17px;
+  margin: 0 0 8px 0;
 }
 
-.repositories .iconbox-blue:hover .icon i {
-  color: #fff;
-}
-
-.repositories .iconbox-blue:hover .icon path {
-  fill: #47aeff;
-}
-
-.repositories .iconbox-violet i {
-  color: #C19DC7;
-}
-
-.repositories .iconbox-violet:hover .icon i {
-  color: #fff;
-}
-
-.repositories .iconbox-violet:hover .icon path {
-  fill: #C19DC7;
-}
-
-.repositories .iconbox-green i {
-  color: #A8DC98;
-}
-
-.repositories .iconbox-green:hover .icon i {
-  color: #fff;
-}
-
-.repositories .iconbox-green:hover .icon path {
-  fill: #A8DC98;
-}
-
-.repositories .iconbox-orange i {
-  color: #ffa76e;
-}
-
-.repositories .iconbox-orange:hover .icon i {
-  color: #fff;
-}
-
-.repositories .iconbox-orange:hover .icon path {
-  fill: #ffa76e;
-}
-
-.repositories .iconbox-pink i {
-  color: #e80368;
-}
-
-.repositories .iconbox-pink:hover .icon i {
-  color: #fff;
-}
-
-.repositories .iconbox-pink:hover .icon path {
-  fill: #e80368;
-}
-
-.repositories .iconbox-yellow i {
-  color: #ffbb2c;
-}
-
-.repositories .iconbox-yellow:hover .icon i {
-  color: #fff;
-}
-
-.repositories .iconbox-yellow:hover .icon path {
-  fill: #ffbb2c;
-}
-
-.repositories .iconbox-red i {
-  color: #ff5828;
-}
-
-.repositories .iconbox-red:hover .icon i {
-  color: #fff;
-}
-
-.repositories .iconbox-red:hover .icon path {
-  fill: #ff5828;
-}
-
-.repositories .iconbox-teal i {
-  color: #11dbcf;
-}
-
-.repositories .iconbox-teal:hover .icon i {
-  color: #fff;
-}
-
-.repositories .iconbox-teal:hover .icon path {
-  fill: #11dbcf;
+.repositories .icon-box-small p {
+  font-size: 13px;
+  line-height: 22px;
 }
 
 /*--------------------------------------------------------------
