@@ -159,11 +159,11 @@
     `[<a href="${link.href}" target="_blank">${link.label}</a>]`
   ).join('\n                  ');
 
-  const renderPublications = () => {
-    const list = select('#publications-list');
+  const renderPapers = (listSelector, papers) => {
+    const list = select(listSelector);
     if (!list) return;
 
-    publications.forEach((publication, index) => {
+    papers.forEach((publication, index) => {
       const delay = Math.min(100 + (index * 50), 500);
       const jcrHtml = publication.jcr ? `
               <div class="jcr-container">
@@ -189,6 +189,9 @@
           </div>`);
     });
   };
+
+  const renderPublications = () => renderPapers('#publications-list', publications);
+  const renderThesis = () => renderPapers('#thesis-list', window.thesisData || []);
 
   const repositories_big = window.repositoriesBigData || [];
 
@@ -229,7 +232,8 @@
   };
 
   document.addEventListener('DOMContentLoaded', renderPublications);
+  document.addEventListener('DOMContentLoaded', renderThesis);
   document.addEventListener('DOMContentLoaded', renderRepositoriesBig);
   document.addEventListener('DOMContentLoaded', RenderRepositoriesSmall);
 
-})()
+})()

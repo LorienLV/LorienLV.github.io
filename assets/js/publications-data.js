@@ -1,21 +1,33 @@
+window.thesisData = [
+  {
+    image: 'assets/img/papers/thesis.png',
+    title: 'Hardware-Aware Algorithms for Efficient Molecular Dynamics and Genome Data Analysis',
+    links: [
+      { href: 'papers/thesis.pdf', label: 'PDF' },
+    ],
+    authorsHtml: '<strong>Lorién López-Villellas</strong>. Supervisors: Jesús Alastruey Benedé, Pablo Enrique Ibáñez Marín and Santiago Marco Sola',
+    venueHtml: 'PhD Thesis, Doctoral Program in Systems Engineering and Computer Science, <a href="https://zaguan.unizar.es" target="_blank">Universidad de Zaragoza</a>, 2026.',
+  },
+];
+
 window.publicationsData = [
   {
     image: 'assets/img/papers/theseus.png',
     title: 'Theseus: Fast and Optimal Affine-Gap Sequence-to-Graph Alignment',
     links: [
-      { href: 'https://www.biorxiv.org/content/10.64898/2026.02.12.705572v1', label: 'bioRXiv' },
+      { href: 'https://doi.org/10.1093/bioinformatics/btag561', label: 'Oxford Academic' }
     ],
     authorsHtml: 'Albert Jiménez-Blanco, <strong>Lorién López-Villellas</strong>, Juan Carlos Moure, Miquel Moreto, and Santiago Marco-Sola',
-    venueHtml: '<a href="https://www.biorxiv.org/content/10.1101/2025.10.31.685625v1" target="_blank">bioRXiv</a>. Published online, February 2026.',
+    venueHtml: '<a href="https://academic.oup.com/bioinformatics" target="_blank">Bioinformatics</a>. Volume 42, Issue 9, September 2026.',
   },
   {
     image: 'assets/img/papers/singletrack.png',
     title: 'Singletrack: An Algorithm for Improving Memory Consumption and Performance of Gap-Affine Sequence Alignment',
     links: [
-      { href: 'https://www.biorxiv.org/content/10.1101/2025.10.31.685625v1', label: 'bioRXiv' },
+      { href: 'https://doi.org/10.1093/bioinformatics/btag183', label: 'Oxford Academic' }
     ],
     authorsHtml: '<strong>Lorién López-Villellas</strong>, Cristian Iñiguez, Albert Jiménez-Blanco, Quim Aguado-Puig, Miquel Moretó, Jesús Alastruey-Benedé, Pablo Ibáñez, and Santiago Marco-Sola',
-    venueHtml: '<a href="https://www.biorxiv.org/content/10.1101/2025.10.31.685625v1" target="_blank">bioRXiv</a>. Published online, October 2025.',
+    venueHtml: '<a href="https://academic.oup.com/bioinformatics" target="_blank">Bioinformatics</a>. Volume 42, Issue 5, May 2026.',
   },
   {
     image: 'assets/img/papers/richardson-2025.jpg',
