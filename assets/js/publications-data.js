@@ -19,6 +19,7 @@ window.publicationsData = [
     ],
     authorsHtml: 'Albert Jiménez-Blanco, <strong>Lorién López-Villellas</strong>, Juan Carlos Moure, Miquel Moreto, and Santiago Marco-Sola',
     venueHtml: '<a href="https://academic.oup.com/bioinformatics" target="_blank">Bioinformatics</a>. Volume 42, Issue 9, September 2026.',
+    jcr: { quartileClass: 'jcr-q1', quartileText: 'Q1', metricText: 'JCR 2025' },
   },
   {
     image: 'assets/img/papers/singletrack.png',
@@ -28,6 +29,7 @@ window.publicationsData = [
     ],
     authorsHtml: '<strong>Lorién López-Villellas</strong>, Cristian Iñiguez, Albert Jiménez-Blanco, Quim Aguado-Puig, Miquel Moretó, Jesús Alastruey-Benedé, Pablo Ibáñez, and Santiago Marco-Sola',
     venueHtml: '<a href="https://academic.oup.com/bioinformatics" target="_blank">Bioinformatics</a>. Volume 42, Issue 5, May 2026.',
+    jcr: { quartileClass: 'jcr-q1', quartileText: 'Q1', metricText: 'JCR 2025' },
   },
   {
     image: 'assets/img/papers/richardson-2025.jpg',

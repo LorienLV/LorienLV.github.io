@@ -190,7 +190,7 @@
     });
   };
 
-  const renderPublications = () => renderPapers('#publications-list', publications);
+  const renderPublications = () => renderPapers('#articles-list', publications);
   const renderThesis = () => renderPapers('#thesis-list', window.thesisData || []);
 
   const repositories_big = window.repositoriesBigData || [];
