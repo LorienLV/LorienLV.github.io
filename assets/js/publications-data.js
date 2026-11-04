@@ -4,6 +4,7 @@ window.thesisData = [
     title: 'Hardware-Aware Algorithms for Efficient Molecular Dynamics and Genome Data Analysis',
     links: [
       { href: 'papers/thesis.pdf', label: 'PDF' },
+      { href: 'papers/thesis_slides.pdf', label: 'Slides' },
     ],
     authorsHtml: '<strong>Lorién López-Villellas</strong>. Supervisors: Jesús Alastruey Benedé, Pablo Enrique Ibáñez Marín and Santiago Marco Sola',
     venueHtml: 'PhD Thesis, Doctoral Program in Systems Engineering and Computer Science, <a href="https://zaguan.unizar.es" target="_blank">Universidad de Zaragoza</a>, 2026.',
