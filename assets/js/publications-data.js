@@ -49,7 +49,7 @@ window.publicationsData = [
       { href: 'https://pubs.acs.org/doi/10.1021/acs.jctc.5c01376', label: 'ACS Publications' },
       { href: 'https://github.com/LorienLV/_PAPER_ILVES', label: 'Code (GitHub)' },
     ],
-    authorsHtml: '<strong>Lorién López-Villellas</strong>, Carl Christian Kjelgaard Mikkelsen, Juan José Galano-Frutos, Santiago Marco-Sola, Jesús Alastruey-Benedé, Pablo Ibáñez, Miquel Moretó, Maria Cristina De Rosa, and Pablo García-Risueño',
+    authorsHtml: '<strong>Lorién López-Villellas</strong>, Carl Christian Kjelgaard Mikkelsen, Juan José Galano-Frutos, Santiago Marco-Sola, Jesús Alastruey-Benedé, Pablo Ibáñez, Pablo Echenique, Miquel Moretó, Maria Cristina De Rosa, and Pablo García-Risueño',
     venueHtml: '<a href="https://pubs.acs.org/journal/jctcce" target="_blank">Journal of Chemical Theory and Computation</a>. Published online, September 2025.',
     jcr: { quartileClass: 'jcr-q1', quartileText: 'Q1', metricText: 'JCR 2024' },
   },
